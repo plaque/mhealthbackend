@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-data-rest')
+	compile('org.springframework.data:spring-data-rest-hal-browser')
+	compile('org.springframework.boot:spring-boot-starter-Security')
+	compile('org.springframework.session:spring-session')
+	compile('org.springframework.security:spring-security-config')
+	compile("io.jsonwebtoken:jjwt:0.7.0")
+	compile('org.springframework.security:spring-security-web')
+	compile('org.springframework.security:spring-security-core')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('javax.mail:mail:1.4.7')
+    compile('org.springframework.boot:spring-boot-starter-mail')
+	runtime('mysql:mysql-connector-java')
+	compile('javax.inject:javax.inject:1')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.Security:spring-Security-test')
+}
